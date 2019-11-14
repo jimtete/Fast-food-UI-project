@@ -29,9 +29,9 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="totalOrder" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="totalOrder" min="-2" pref="551" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,12 +56,17 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="86" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="foodCount" min="-2" pref="51" max="-2" attributes="0"/>
-                                  <Component id="bAdd" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jScrollPane1" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="foodCount" min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Component id="bAdd" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="224" max="32767" attributes="0"/>
                               <Component id="foodDisplay" min="-2" pref="200" max="-2" attributes="0"/>
@@ -90,21 +95,26 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="bAdd" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="foodCount" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
-                                  <Component id="foodDisplay" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="bAdd" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="foodCount" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="foodDisplay" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -118,7 +128,7 @@
                           </Group>
                           <Component id="drinkDisplay" min="-2" pref="160" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="211" max="32767" attributes="0"/>
+                      <EmptySpace pref="152" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -212,6 +222,11 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAdd2ActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3bb;&#x3ad;&#x3be;&#x3c4;&#x3b5; &#x3c6;&#x3b1;&#x3b3;&#x3b7;&#x3c4;&#x3cc;"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -226,14 +241,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel3" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="268" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -244,127 +259,133 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                          <Component id="lKostos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lGyros" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSouvlaki" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lSoutzoukaki" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lGemista" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lCoke" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lNero" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lLemonada" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lPortokalada" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lChoriatiki" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lPrasini" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace pref="91" max="32767" attributes="0"/>
-                                  <Component id="lKostos" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jScrollPane2" pref="577" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lGyros" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lSouvlaki" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lSoutzoukaki" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lGemista" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lChoriatiki" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lPrasini" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lKostos" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lCoke" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lNero" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lLemonada" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lPortokalada" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="76" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="lKostos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="120" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="227" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lGyros">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Gyros: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lSouvlaki">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Souvlaki: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lSoutzoukaki">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Soutzoukaki: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lGemista">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Gemista: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lChoriatiki">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Choriatiki: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lPrasini">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Prasini: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lCoke">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Coca Cola: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lNero">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Nero: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lLemonada">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Lemonada: 0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lPortokalada">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Portokalada: 0"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="lKostos">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="36" style="1"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Synoliko kostos: 0"/>
+                    <Property name="text" type="java.lang.String" value="&#x3a3;&#x3c5;&#x3bd;&#x3bf;&#x3bb;&#x3b9;&#x3ba;&#x3cc; &#x3ba;&#x3cc;&#x3c3;&#x3c4;&#x3bf;&#x3c2;: 0"/>
                   </Properties>
                 </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="detailedCost">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="32" green="32" red="32" type="rgb"/>
+                        </Property>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                            <LineBorder>
+                              <Color PropertyName="color" blue="f8" green="fc" red="f0" type="rgb"/>
+                            </LineBorder>
+                          </Border>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="18" style="0"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" postCode="Color color = UIManager.getColor(&quot;Table.gridColor&quot;);&#xa;MatteBorder border = new MatteBorder(1, 1, 0, 0, color);&#xa;detailedCost.setBorder(border);">
+                          <Table columnCount="3" rowCount="10">
+                            <Column editable="false" title="&#x3a0;&#x3b1;&#x3c1;&#x3b1;&#x3b3;&#x3b3;&#x3b5;&#x3bb;&#x3b5;&#x3af;&#x3b1;" type="java.lang.Object">
+                              <Data value="&#x393;&#x3cd;&#x3c1;&#x3bf;&#x3c2;"/>
+                              <Data value="&#x3a3;&#x3bf;&#x3c5;&#x3c4;&#x3b6;&#x3bf;&#x3c5;&#x3ba;&#x3ac;&#x3ba;&#x3b9;"/>
+                              <Data value="&#x3a3;&#x3bf;&#x3c5;&#x3b2;&#x3bb;&#x3ac;&#x3ba;&#x3b9;"/>
+                              <Data value="&#x3a7;&#x3c9;&#x3c1;&#x3b9;&#x3ac;&#x3c4;&#x3b9;&#x3ba;&#x3b7;"/>
+                              <Data value="&#x3a0;&#x3c1;&#x3ac;&#x3c3;&#x3b9;&#x3bd;&#x3b7;"/>
+                              <Data value="&#x393;&#x3b5;&#x3bc;&#x3b9;&#x3c3;&#x3c4;&#x3ac;"/>
+                              <Data value="&#x3a0;&#x3bf;&#x3c1;&#x3c4;&#x3bf;&#x3ba;&#x3b1;&#x3bb;&#x3ac;&#x3b4;&#x3b1;"/>
+                              <Data value="&#x39a;&#x3cc;&#x3ba;&#x3b1; &#x39a;&#x3cc;&#x3bb;&#x3b1;"/>
+                              <Data value="&#x39d;&#x3b5;&#x3c1;&#x3cc;"/>
+                              <Data value="&#x39b;&#x3b5;&#x3bc;&#x3bf;&#x3bd;&#x3ac;&#x3b4;&#x3b1;"/>
+                            </Column>
+                            <Column editable="false" title="&#x3a0;&#x3bf;&#x3c3;&#x3cc;&#x3c4;&#x3b7;&#x3c4;&#x3b1;" type="java.lang.Object">
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                              <Data value="0"/>
+                            </Column>
+                            <Column editable="false" title="&#x3a4;&#x3b9;&#x3bc;&#x3ae; &#x3c0;&#x3bf;&#x3c3;&#x3cc;&#x3c4;&#x3b7;&#x3c4;&#x3b1;&#x3c2;" type="java.lang.Object">
+                              <Data value="6"/>
+                              <Data value="5"/>
+                              <Data value="4"/>
+                              <Data value="3"/>
+                              <Data value="2"/>
+                              <Data value="7"/>
+                              <Data value="3"/>
+                              <Data value="2"/>
+                              <Data value="2"/>
+                              <Data value="1"/>
+                            </Column>
+                          </Table>
+                        </Property>
+                        <Property name="alignmentX" type="float" value="1.0"/>
+                        <Property name="alignmentY" type="float" value="1.0"/>
+                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                          <TableColumnModel selectionModel="0">
+                            <Column maxWidth="-1" minWidth="18" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="18" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                            <Column maxWidth="-1" minWidth="18" prefWidth="-1" resizable="true">
+                              <Title/>
+                              <Editor/>
+                              <Renderer/>
+                            </Column>
+                          </TableColumnModel>
+                        </Property>
+                        <Property name="rowHeight" type="int" value="20"/>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
           </SubComponents>

@@ -1,5 +1,10 @@
 
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.UIManager;
+import javax.swing.border.MatteBorder;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,6 +21,7 @@ public class MAKHS extends javax.swing.JFrame {
     /**
      * Creates new form MAKHS
      */
+    
     int kostos=0;
     String foods[]={"Gyros","Soutzoukaki","Souvlaki","Choriatiki","Prasini","Gemista"};
     int foodsprice[]={6,5,4,3,2,7};
@@ -25,7 +31,11 @@ public class MAKHS extends javax.swing.JFrame {
     int drinkcounter[]={0,0,0,0};
     
     public MAKHS() {
+        
         initComponents();
+        
+
+        
     }
 
     /**
@@ -49,19 +59,12 @@ public class MAKHS extends javax.swing.JFrame {
         drinkDisplay = new javax.swing.JLabel();
         drinkCount = new javax.swing.JSpinner();
         bAdd2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        lGyros = new javax.swing.JLabel();
-        lSouvlaki = new javax.swing.JLabel();
-        lSoutzoukaki = new javax.swing.JLabel();
-        lGemista = new javax.swing.JLabel();
-        lChoriatiki = new javax.swing.JLabel();
-        lPrasini = new javax.swing.JLabel();
-        lCoke = new javax.swing.JLabel();
-        lNero = new javax.swing.JLabel();
-        lLemonada = new javax.swing.JLabel();
-        lPortokalada = new javax.swing.JLabel();
         lKostos = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        detailedCost = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ο ΜΑΚΗΣ");
@@ -80,7 +83,7 @@ public class MAKHS extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(food);
 
-        foodCount.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(1), null, Integer.valueOf(1)));
+        foodCount.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         bAdd.setText("add");
         bAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +104,7 @@ public class MAKHS extends javax.swing.JFrame {
         foodDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/foodGyros.jpg"))); // NOI18N
         foodDisplay.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        drinkCount.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(1), Integer.valueOf(0), null, Integer.valueOf(1)));
+        drinkCount.setModel(new javax.swing.SpinnerNumberModel(1, 0, null, 1));
 
         bAdd2.setText("add");
         bAdd2.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +113,8 @@ public class MAKHS extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Επιλέξτε φαγητό");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,12 +122,15 @@ public class MAKHS extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
+                        .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(foodCount, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bAdd))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(foodCount, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bAdd)))
+                            .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
                         .addComponent(foodDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -143,17 +151,21 @@ public class MAKHS extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(26, 26, 26)
+                            .addComponent(bAdd)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(foodCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(foodDisplay)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(bAdd)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(foodCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(foodDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(62, 62, 62)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(47, 47, 47)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,87 +176,77 @@ public class MAKHS extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(drinkCount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(drinkDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         totalOrder.addTab("ΦΟΡΜΑ ΠΑΡΑΓΓΕΛΙΑΣ", jPanel1);
 
-        lGyros.setText("Gyros: 0");
-
-        lSouvlaki.setText("Souvlaki: 0");
-
-        lSoutzoukaki.setText("Soutzoukaki: 0");
-
-        lGemista.setText("Gemista: 0");
-
-        lChoriatiki.setText("Choriatiki: 0");
-
-        lPrasini.setText("Prasini: 0");
-
-        lCoke.setText("Coca Cola: 0");
-
-        lNero.setText("Nero: 0");
-
-        lLemonada.setText("Lemonada: 0");
-
-        lPortokalada.setText("Portokalada: 0");
-
         lKostos.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lKostos.setText("Synoliko kostos: 0");
+        lKostos.setText("Συνολικό κόστος: 0");
+
+        detailedCost.setBackground(new java.awt.Color(50, 50, 50));
+        detailedCost.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 252, 248)));
+        detailedCost.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        detailedCost.setForeground(new java.awt.Color(255, 255, 255));
+        detailedCost.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Γύρος", "0", "6"},
+                {"Σουτζουκάκι", "0", "5"},
+                {"Σουβλάκι", "0", "4"},
+                {"Χωριάτικη", "0", "3"},
+                {"Πράσινη", "0", "2"},
+                {"Γεμιστά", "0", "7"},
+                {"Πορτοκαλάδα", "0", "3"},
+                {"Κόκα Κόλα", "0", "2"},
+                {"Νερό", "0", "2"},
+                {"Λεμονάδα", "0", "1"}
+            },
+            new String [] {
+                "Παραγγελεία", "Ποσότητα", "Τιμή ποσότητας"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Color color = UIManager.getColor("Table.gridColor");
+        MatteBorder border = new MatteBorder(1, 1, 0, 0, color);
+        detailedCost.setBorder(border);
+        detailedCost.setAlignmentX(1.0F);
+        detailedCost.setAlignmentY(1.0F);
+        detailedCost.setRowHeight(20);
+        jScrollPane2.setViewportView(detailedCost);
+        if (detailedCost.getColumnModel().getColumnCount() > 0) {
+            detailedCost.getColumnModel().getColumn(0).setMinWidth(18);
+            detailedCost.getColumnModel().getColumn(1).setMinWidth(18);
+            detailedCost.getColumnModel().getColumn(2).setMinWidth(18);
+        }
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lKostos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lGyros)
-                            .addComponent(lSouvlaki)
-                            .addComponent(lSoutzoukaki)
-                            .addComponent(lGemista)
-                            .addComponent(lCoke)
-                            .addComponent(lNero)
-                            .addComponent(lLemonada)
-                            .addComponent(lPortokalada))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lChoriatiki)
-                            .addComponent(lPrasini))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                        .addComponent(lKostos)
-                        .addGap(97, 97, 97))))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lGyros)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lSouvlaki)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lSoutzoukaki)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lGemista)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lChoriatiki)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lPrasini))
-                    .addComponent(lKostos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lCoke)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lNero)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lLemonada)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lPortokalada)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(120, 120, 120)
+                .addComponent(lKostos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -257,7 +259,7 @@ public class MAKHS extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 268, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         totalOrder.addTab("ΣΥΝΟΛΙΚΗ ΠΑΡΑΓΓΕΛΙΑ", jPanel2);
@@ -270,9 +272,9 @@ public class MAKHS extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(totalOrder))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(totalOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -282,6 +284,8 @@ public class MAKHS extends javax.swing.JFrame {
         int i=food.getSelectedIndex();
         String image="Images/food"+foods[i]+".jpg";
         foodDisplay.setIcon(new javax.swing.ImageIcon(getClass().getResource(image))); 
+        
+        
         
     }//GEN-LAST:event_foodValueChanged
 
@@ -295,28 +299,18 @@ public class MAKHS extends javax.swing.JFrame {
         int i=food.getSelectedIndex();
         int value = (Integer) foodCount.getValue();
         kostos+=value*foodsprice[i];
-        switch (i){
-            case 0:lGyros.setText("Gyros: "+value);break;
-            case 1:lSoutzoukaki.setText("Soutzoukaki: "+value);break;
-            case 2:lSouvlaki.setText("Souvlaki: "+value);break;
-            case 3:lChoriatiki.setText("Choriatiki: "+value);break;
-            case 4:lPrasini.setText("Prasini: "+value);break;
-            case 5:lGemista.setText("Gemista: "+value);break;
-        }
-        lKostos.setText("Synoliko kostos: "+kostos);
+        lKostos.setText("Συνολικό κόστος: "+kostos);
+        DefaultTableModel model = (DefaultTableModel)detailedCost.getModel();
+        model.setValueAt(value,i, 1);
     }//GEN-LAST:event_bAddActionPerformed
 
     private void bAdd2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAdd2ActionPerformed
         int i=drinksCombo.getSelectedIndex();
         int value = (Integer) drinkCount.getValue();
         kostos+=value*drinksprice[i];
-        switch (i){
-            case 0:lPortokalada.setText("Portokalada: "+value);break;
-            case 1:lCoke.setText("Coca cola: "+value);break;
-            case 2:lNero.setText("Nero: "+value);break;
-            case 3:lLemonada.setText("Lemonada: "+value);break;
-        }
-        lKostos.setText("Synoliko kostos: "+kostos);
+        lKostos.setText("Συνολικό κόστος: "+kostos);
+        DefaultTableModel model = (DefaultTableModel)detailedCost.getModel();
+        model.setValueAt(value,i+6, 1);
     }//GEN-LAST:event_bAdd2ActionPerformed
 
     /**
@@ -357,28 +351,21 @@ public class MAKHS extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAdd;
     private javax.swing.JButton bAdd2;
+    private javax.swing.JTable detailedCost;
     private javax.swing.JSpinner drinkCount;
     private javax.swing.JLabel drinkDisplay;
     private javax.swing.JComboBox<String> drinksCombo;
     private javax.swing.JList<String> food;
     private javax.swing.JSpinner foodCount;
     private javax.swing.JLabel foodDisplay;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel lChoriatiki;
-    private javax.swing.JLabel lCoke;
-    private javax.swing.JLabel lGemista;
-    private javax.swing.JLabel lGyros;
     private javax.swing.JLabel lKostos;
-    private javax.swing.JLabel lLemonada;
-    private javax.swing.JLabel lNero;
-    private javax.swing.JLabel lPortokalada;
-    private javax.swing.JLabel lPrasini;
-    private javax.swing.JLabel lSoutzoukaki;
-    private javax.swing.JLabel lSouvlaki;
     private javax.swing.JTabbedPane totalOrder;
     // End of variables declaration//GEN-END:variables
 
