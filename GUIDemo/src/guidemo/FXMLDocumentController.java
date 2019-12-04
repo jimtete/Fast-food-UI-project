@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 /**
@@ -29,6 +30,12 @@ public class FXMLDocumentController implements Initializable {
     //These items were for the choicebox || part 2;
     @FXML private ChoiceBox choiceBox;
     @FXML private Label choiceBoxLabel;
+    
+    //These items are for the combobox || part 3;
+    @FXML private ComboBox comboBox;
+    @FXML private Label comboBoxLabel;
+    
+    
     
     /*
     This will update the label for the choicebox || part 2
@@ -51,7 +58,13 @@ public class FXMLDocumentController implements Initializable {
         this.pizzaOrderLabel.setText(order);
     }
     
+    /*
+    This will update the comboBoxLabel when the box is changed
+    */
     
+    public void comboBoxedWasUpdated(){
+        comboBoxLabel.setText("Course selected: \n"+ comboBox.getValue().toString());
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -63,6 +76,10 @@ public class FXMLDocumentController implements Initializable {
         choiceBox.getItems().add("bananas");
         choiceBox.getItems().addAll("oranges","pears","strawberries");
         choiceBox.setValue("apples");
-    }    
+        
+        //These items are for configuiring the comboBox example
+        comboBoxLabel.setText("");
+        comboBox.getItems().addAll("COMP1030","COMP1080","COMP2003","EMU8086");
+    }   
     
 }
