@@ -14,6 +14,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+
 
 /**
  *
@@ -35,6 +38,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML private ComboBox comboBox;
     @FXML private Label comboBoxLabel;
     
+    //These items are for the radioButtons || part 4;
+    @FXML private Label radioButtonLabel;
+    @FXML private RadioButton phpRB;
+    @FXML private RadioButton javaRB;
+    @FXML private RadioButton cSharpRB;
+    @FXML private RadioButton pythonRB;
+    private ToggleGroup favLangToggleGroup;
     
     
     /*
@@ -59,6 +69,17 @@ public class FXMLDocumentController implements Initializable {
     }
     
     /*
+    This will update the radioButtonLabel when ever a different radioButton is pushed
+    */
+    
+    public void radioButtonedPushed(){
+        if (this.favLangToggleGroup.getSelectedToggle().equals(cSharpRB))radioButtonLabel.setText("The selected language is : C#");
+        if (this.favLangToggleGroup.getSelectedToggle().equals(phpRB))radioButtonLabel.setText("The selected language is : php");
+        if (this.favLangToggleGroup.getSelectedToggle().equals(javaRB))radioButtonLabel.setText("The selected language is : Java");
+        if (this.favLangToggleGroup.getSelectedToggle().equals(pythonRB))radioButtonLabel.setText("The selected language is : Python");
+    }
+    
+    /*
     This will update the comboBoxLabel when the box is changed
     */
     
@@ -80,6 +101,12 @@ public class FXMLDocumentController implements Initializable {
         //These items are for configuiring the comboBox example
         comboBoxLabel.setText("");
         comboBox.getItems().addAll("COMP1030","COMP1080","COMP2003","EMU8086");
+        
+        //These items are for the RadioButtons
+        radioButtonLabel.setText("");
+        favLangToggleGroup = new ToggleGroup();
+        phpRB.setToggleGroup(favLangToggleGroup);javaRB.setToggleGroup(favLangToggleGroup);
+        cSharpRB.setToggleGroup(favLangToggleGroup);pythonRB.setToggleGroup(favLangToggleGroup);
     }   
     
 }
