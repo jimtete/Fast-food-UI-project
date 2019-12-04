@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 
 /**
@@ -19,12 +20,27 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable {
     
+    //These items were for the checkbox || part 1;
     @FXML private Label pizzaOrderLabel;
     @FXML private CheckBox pepperoniCheckBox;
     @FXML private CheckBox pineappleCheckBox;
     @FXML private CheckBox baconCheckBox;
     
+    //These items were for the choicebox || part 2;
+    @FXML private ChoiceBox choiceBox;
+    @FXML private Label choiceBoxLabel;
     
+    /*
+    This will update the label for the choicebox || part 2
+    */
+    
+    public void choiceBoxButtonPressed(){
+        choiceBoxLabel.setText("My favourite fruit is:\n"+choiceBox.getValue().toString());
+    }
+    
+    /*
+    This is for the checkbox example || part 1
+    */
     public void pizzaOrderButtonPushed(){
         String order = "Toppings are: ";
         
@@ -35,15 +51,18 @@ public class FXMLDocumentController implements Initializable {
         this.pizzaOrderLabel.setText(order);
     }
     
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        pizzaOrderLabel.setText("Hello World!");
-    }
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         pizzaOrderLabel.setText("");
+        
+        //These items are for configuring the choiceBox example
+        choiceBoxLabel.setText("");
+        choiceBox.getItems().add("apples");
+        choiceBox.getItems().add("bananas");
+        choiceBox.getItems().addAll("oranges","pears","strawberries");
+        choiceBox.setValue("apples");
     }    
     
 }
