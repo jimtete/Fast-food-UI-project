@@ -6,7 +6,9 @@
 package guidemo;
 
 import java.net.URL;
+import java.util.Observable;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +16,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 
 
@@ -46,6 +51,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML private RadioButton pythonRB;
     private ToggleGroup favLangToggleGroup;
     
+    //These items are for the listView and TextArea example || part 5
+    @FXML private ListView listView;
+    @FXML private TextArea pcTextArea;
     
     /*
     This will update the label for the choicebox || part 2
@@ -87,6 +95,21 @@ public class FXMLDocumentController implements Initializable {
         comboBoxLabel.setText("Course selected: \n"+ comboBox.getValue().toString());
     }
     
+    /*
+    This method will copy the Strings fromthe Listview to textarea
+    */
+    
+    public void copyStrings(){
+        String textAreaString="";
+        ObservableList listOfItems = listView.getSelectionModel().getSelectedItems();
+        
+        for (Object item : listOfItems){
+            textAreaString+=String.format("%s%n",(String)item);
+        }
+        
+        pcTextArea.setText(textAreaString);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         pizzaOrderLabel.setText("");
@@ -107,6 +130,12 @@ public class FXMLDocumentController implements Initializable {
         favLangToggleGroup = new ToggleGroup();
         phpRB.setToggleGroup(favLangToggleGroup);javaRB.setToggleGroup(favLangToggleGroup);
         cSharpRB.setToggleGroup(favLangToggleGroup);pythonRB.setToggleGroup(favLangToggleGroup);
+        
+        //These items are for Listview and Textarea
+        listView.getItems().addAll("GTX 970","R5 1600X","16GB RAM","SSD 128GB","SSD 240GB","HDD 4TB");
+        listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        
+        
     }   
     
 }
