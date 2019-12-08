@@ -124,8 +124,11 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </Label>
-                                          <Spinner fx:id="drinkSpinner" prefHeight="26.0" prefWidth="180.0" />
-                                          <StackPane prefHeight="150.0" prefWidth="226.0">
+                                          <Spinner fx:id="drinkSpinner" prefHeight="25.0" prefWidth="193.0">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets></Spinner>
+                                          <StackPane prefHeight="148.0" prefWidth="133.0">
                                              <children>
                                                 <Button mnemonicParsing="false" onAction="#calcDrink" text="Προσθέστε στην παραγγελία">
                                                    <font>
@@ -136,6 +139,9 @@
                                              <padding>
                                                 <Insets bottom="35.0" />
                                              </padding>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
                                           </StackPane>
                                        </children>
                                        <padding>
